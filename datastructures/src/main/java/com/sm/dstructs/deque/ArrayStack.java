@@ -62,7 +62,7 @@ public class ArrayStack<T> extends AbstractList<T> {
 	 * @see AbstractList
 	 */
 	public boolean add(T x) {
-		if (n++ > backingArray.length) {
+		if (n + 1 > backingArray.length) {
 			resize(); // we have reached the max length, need to grow the
 						// backingArray
 		}
@@ -83,7 +83,7 @@ public class ArrayStack<T> extends AbstractList<T> {
 	public void add(int index, T x) {
 		if (index < 0 || index > (n - 1))
 			throw new IndexOutOfBoundsException();
-		if (n++ > backingArray.length)
+		if (n + 1 > backingArray.length)
 			resize();
 		for (int j = n; j > index; j--) {
 			backingArray[j] = backingArray[j - 1];
